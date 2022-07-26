@@ -30,23 +30,26 @@ void main(List<String> arguments) {
     // Normal Function
     print(func("John"));
 
-    // Named parameter and optional parameter
-    print(func2("Jane"));
+    // Positional function
+    // age is optional
+    print("Positional and Optional Function: ${func2("John")}");
+    // age and hobby is positional and optional
+    print("Positional and Optional Function: ${func8("John", 12, "fishing")}");
+
+    // Named parameter and optional parameter (age is optional)
+    print(func3("Jane"));
     // Named parameter and optional parameter and nullable
-    print(func3(height: 177));
-    print(func3());
+    print(func4(height: 177));
+    print(func4());
 
     // Named parameter and required parameter
-    print(func4(height: 177));
+    print(func5(height: 177));
 
     // Integer Data Type Function
-    print("Integer data type function: ${func5(15)}, ${func5(15).runtimeType}");
+    print("Integer data type function: ${func6(15)}, ${func6(15).runtimeType}");
 
     // Void function
-    func6();
-
-    // Positional function (age and hobby is positional)
-    print("Positional Function: ${func7("John", 12, "fishing" )}");
+    func7();
 }
 
 // Reference: https://stackoverflow.com/questions/13264230/what-is-the-difference-between-named-and-positional-parameters-in-dart
@@ -55,37 +58,44 @@ String func(String name) {
     return "Normal: ${name.runtimeType}";
 }
 
+// Positional parameter and optional parameter
+// "age" and optional
+String func2(String name, [int age = 19]) {
+    return "Positional and Optional Parameter: my name is $name and my age is $age!";
+}
+
+// Positional function (age and hobby is positional)
+// age and hobby is nullable
+String func8(String name, [int? age, String? hobby]){
+    return "my name is $name, my age is $age, my hobby is $hobby!";
+}
+
 // Named parameter and optional parameter
 // "age" and optional
-String func2(String name, {int age = 19}) {
-    return "Named and Optional Parameter (function): my name is $name and my age is $age!";
+String func3(String name, {int age = 19}) {
+    return "Named and Optional Parameter: my name is $name and my age is $age!";
 }
 
 // Named parameter and optional parameter and nullable
 // "?" makes it nullable
-String func3({int? height}) {
-    return "Named, Optional and Nullable parameter (function): $height";
+String func4({int? height}) {
+    return "Named, Optional and Nullable parameter: $height";
 }
 
 // Named parameter and required parameter
-String func4({required int height}) {
-    return "Named and Required parameter (function): $height";
+String func5({required int height}) {
+    return "Named and Required parameter: $height";
 }
 
 // Integer Data Type Function
-int func5(int integer) {
+int func6(int integer) {
     return integer;
 }
 
 // "void" does not have any return value
 // use case: showing a dialog box in the front end
-void func6(){
+void func7(){
     print("Void function");
     return;
 }
 
-// Positional function (age and hobby is positional)
-// age and hobby is nullable
-String func7(String name, [int? age, String? hobby]){
-    return "my name is $name, my age is $age, my hobby is $hobby!";
-}
