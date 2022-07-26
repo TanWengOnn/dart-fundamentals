@@ -1,6 +1,8 @@
 import 'package:myproject/myproject.dart' as myproject;
 
 void main(List<String> arguments) {
+
+    //-------------Data Type-------------//
     // String
     String string = 'Besquare2022';
 
@@ -25,6 +27,7 @@ void main(List<String> arguments) {
     print("dynamic: $x, $y");
     print("Constant: $constant \nFinal: $constantFinal");
 
+    //-------------Functions-------------//
     print("\n=============Functions=============");
 
     // Normal Function
@@ -50,8 +53,133 @@ void main(List<String> arguments) {
 
     // Void function
     func7();
+
+    //-------------Advance Data Type-------------//
+    print("\n=============Advance Data Type=============");
+    // List/Array
+    List<int> arr = [1, 2, 3];
+    print("List/Array: $arr");
+
+    // Map
+    // Syntax: Map<Key datatype, actual datatype >
+    Map<String, int> map = {'age': 20, 'height': 177};
+    print("Map: $map");
+    Map<int, String> map2 = {1: "John", 2: "test" };
+    print("Map: $map2");
+
+    //-------------If/Else Statement-------------//
+    print("\n=============If/Else Statement=============");
+
+    int num = 10;
+
+    print("Normal If/Else: ");
+    if (num % 2 == 0){
+        print("$num is an even number\n");
+    }else {
+        print("$num is an odd number\n");
+    }
+
+    int num2 = 1;
+    print("Else If: ");
+    if (num2 == 0){
+        print("you selected $num2\n");
+    } else if (num2 == 1) {
+        print("you selected $num2\n");
+    }
+    else {
+        print("selected number $num2 is not in the list\n");
+    }
+
+    print("If/Else Example: ");
+    int? age;
+    if (age == null){
+        print("age is not provided");
+    }else{
+        print("your age is $age");
+    }
+
+    //-------------Switch/Case Statement-------------//
+    print("\n=============Switch/Case Statement=============");
+
+    int num3 = 3;
+    print("Switch (integer):");
+    switch(num3){
+        case 1:
+            print("You have selected the number $num3\n");
+            break;
+        case 2:
+            print("You have selected the number $num3\n");
+            break;
+        case 3:
+            print("You have selected the number $num3\n");
+            break;
+        default:
+            print("selected number $num3 is not in the list\n");
+            break;
+    }
+
+    print("Switch (string):");
+    String numStr = "one";
+    switch(numStr){
+        case "one":
+            print("You have selected the number 1\n");
+            break;
+        case "two":
+            print("You have selected the number 2\n");
+            break;
+        case "three":
+            print("You have selected the number 3\n");
+            break;
+        default:
+            print("selected number $numStr is not in the list\n");
+            break;
+    }
+
+    //-------------For Loop-------------//
+    print("\n=============For Loop=============");
+    var names = ["John", "Jane", "Anne", "Rick", "Morty"];
+
+    print("Normal For Loop: ");
+    for (var i = 0; i < 5; i++){
+        print("${names[i]}, Index: $i");
+    }
+
+    print("\nFor-In Loop: ");
+    for (var name in names ){
+        print(name);
+    }
+
+    print("\nForEach Loop (arrow function): ");
+    names.forEach((name) => print(name));
+
+    print("\nForEach Loop (normal function): ");
+    names.forEach((name) {
+        print(name);
+    });
+
+    //-------------While Loop-------------//
+    print("\n=============While Loop=============");
+
+    bool boolean = true;
+    int whileNum = 0;
+
+    print("Normal while loop: ");
+    while(boolean){
+        print("This is loop number $whileNum");
+        if (whileNum == 3){
+            break;
+        }
+        whileNum++;
+    }
+
+    print("\nDo-while loop: ");
+    do{
+        print("This loop would run once no matter what!");
+    }while(false);
+
 }
 
+//-------------Functions-------------//
 // Reference: https://stackoverflow.com/questions/13264230/what-is-the-difference-between-named-and-positional-parameters-in-dart
 // Type casting is optional
 String func(String name) {
